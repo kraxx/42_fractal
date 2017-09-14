@@ -46,6 +46,23 @@ void	key_fp_7(t_m *m, int press)
 	}
 }
 
+void	key_fp_8(t_m *m, int press)
+{
+	if (press)
+	{
+		mlx_destroy_image(m->mlx, m->img->ptr);
+		mlx_destroy_window(m->mlx, m->win);
+		m->frac = RAY;
+		m->win = mlx_new_window(m->mlx, m->width, m->height, m->name[m->frac]);
+		m->img->ptr = mlx_new_image(m->mlx, m->width, m->height);
+		m->img->data = (int*)mlx_get_data_addr(m->img->ptr,
+				&m->img->bpp, &m->img->size, &m->img->e);
+		set_hooks(m);
+		reset_xy(m);
+		start_draw(m);
+	}
+}
+
 void	key_fp_left_brace(t_m *m, int press)
 {
 	if (press && m->width > 50 && m->height > 50)
@@ -81,14 +98,5 @@ void	key_fp_right_brace(t_m *m, int press)
 				&m->img->bpp, &m->img->size, &m->img->e);
 		set_hooks(m);
 		start_draw(m);
-	}
-}
-
-void	key_fp_esc(t_m *m, int press)
-{
-	if (press)
-	{
-		mlx_destroy_window(m->mlx, m->win);
-		exit(42);
 	}
 }

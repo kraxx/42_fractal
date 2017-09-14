@@ -29,6 +29,7 @@ void	key_fp_mult(t_m *m, int press)
 		if (m->iter < ITER_CAP)
 			m->iter += ITER_INC;
 	}
+	start_draw(m);
 }
 
 void	key_fp_div(t_m *m, int press)
@@ -38,4 +39,5 @@ void	key_fp_div(t_m *m, int press)
 		if (m->iter > 0)
 			m->iter -= ITER_INC;
 	}
+	start_draw(m);
 }

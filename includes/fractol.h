@@ -68,7 +68,8 @@
 # define MENACE			4
 # define CREVICE		5
 # define FISH			6
-# define TIME			0
+# define TIME			7
+# define RAY			0
 
 # define SQUARE(x)		(x * x)
 
@@ -128,10 +129,10 @@ typedef struct	s_master
 	int		pulse_speed_switch[5];
 	t_ui	pulse_i:3;
 	t_ui	preset_i:3;
-	int		preset_bw_i:3;
+	t_ui	preset_bw_i:3;
+	t_ui	frac:4;
 	int		col_1;
 	int		col_2;
-	int		frac:4;
 	int		toggle:1;
 	int		pulse:1;
 	int		inverted:1;
@@ -200,6 +201,7 @@ void			key_fp_4(t_m *m, int press);
 void			key_fp_5(t_m *m, int press);
 void			key_fp_6(t_m *m, int press);
 void			key_fp_7(t_m *m, int press);
+void			key_fp_8(t_m *m, int press);
 void			key_fp_left_brace(t_m *m, int press);
 void			key_fp_right_brace(t_m *m, int press);
 void			key_fp_esc(t_m *m, int press);
@@ -229,6 +231,7 @@ int				f_crevice(t_m *m, int x, int y);
 int				f_menace(t_m *m, int x, int y);
 int				f_fish(t_m *m, int x, int y);
 int				f_time(t_m *m, int x, int y);
+int				f_ray(t_m *m, int x, int y);
 
 void			init_env(t_m *m);
 

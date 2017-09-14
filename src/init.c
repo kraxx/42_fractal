@@ -47,6 +47,7 @@ static void	init_func_ptr(t_m *m)
 	m->frac_pattern[CREVICE] = &f_crevice;
 	m->frac_pattern[FISH] = &f_fish;
 	m->frac_pattern[TIME] = &f_time;
+	m->frac_pattern[RAY] = &f_ray;
 }
 
 static void	init_name(t_m *m)
@@ -58,6 +59,7 @@ static void	init_name(t_m *m)
 	m->name[CREVICE] = ft_strdup("DON'T GET LOST :3");
 	m->name[FISH] = ft_strdup("GLUG GLUG");
 	m->name[TIME] = ft_strdup("DUDUDUDUDU");
+	m->name[RAY] = ft_strdup("STINGS LIKE A BEE");
 }
 
 void		init_env(t_m *m)

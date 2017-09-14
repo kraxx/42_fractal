@@ -32,11 +32,11 @@ int			mouse_release_hook(int keycode, int x, int y, t_m *m)
 
 int			mouse_motion_hook(int x, int y, t_m *m)
 {
+	m->mouse_x = x;
+	m->mouse_y = y;
 	if (x >= 0 && x < m->width && y >= 0 && y < m->height &&
 			!m->togs->home && !m->togs->end)
 	{
-		m->mouse_x = x;
-		m->mouse_y = y;
 		if (m->togs->mouse_left)
 		{
 			translate_xy(m, -(x - m->mouse_left_x) * DRAG_SENS,

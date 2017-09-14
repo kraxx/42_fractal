@@ -51,6 +51,7 @@ static void		init_key_fp2(t_m *m)
 	m->key_fp[KEY_5] = &key_fp_5;
 	m->key_fp[KEY_6] = &key_fp_6;
 	m->key_fp[KEY_7] = &key_fp_7;
+	m->key_fp[KEY_8] = &key_fp_8;
 	m->key_fp[KEY_BRACE_L] = &key_fp_left_brace;
 	m->key_fp[KEY_BRACE_R] = &key_fp_right_brace;
 	m->key_fp[KEY_FN] = &key_fp_fn;

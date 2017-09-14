@@ -61,3 +61,12 @@ void	key_fp_v(t_m *m, int press)
 		start_draw(m);
 	}
 }
+
+void	key_fp_esc(t_m *m, int press)
+{
+	if (press)
+	{
+		mlx_destroy_window(m->mlx, m->win);
+		exit(42);
+	}
+}
