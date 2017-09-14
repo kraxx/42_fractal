@@ -79,7 +79,6 @@ void		init_key_fp(t_m *m)
 	m->key_fp[KEY_NUM_7] = &key_fp_numpad_7;
 	m->key_fp[KEY_NUM_8] = &key_fp_numpad_8;
 	m->key_fp[KEY_NUM_9] = &key_fp_numpad_9;
-	m->key_fp[KEY_NUM_0] = &key_fp_numpad_0;
 	m->key_fp[KEY_PLUS] = &key_fp_plus;
 	m->key_fp[KEY_MINUS] = &key_fp_minus;
 	m->key_fp[KEY_MULTIPLY] = &key_fp_mult;

@@ -79,5 +79,8 @@ void	key_fp_numpad_9(t_m *m, int press)
 void	key_fp_numpad_0(t_m *m, int press)
 {
 	if (press)
+	{
 		reset_xy(m);
+		start_draw(m);
+	}
 }
