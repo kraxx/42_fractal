@@ -38,3 +38,9 @@ void	key_fp_s(t_m *m, int press)
 {
 	m->togs->s = press ? 1 : 0;
 }
+
+void	key_fp_i(t_m *m, int press)
+{
+	if (press)
+		m->inverted = m->inverted ? 0 : 1;
+}

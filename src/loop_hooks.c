@@ -12,23 +12,30 @@
 
 #include "fractol.h"
 
-int		expose_hook(t_m *m)
+static int	expose_hook(t_m *m)
 {
+	m->toggle = 0;
 	start_draw(m);
 	return (1);
 }
 
-int		loop_hook(t_m *m)
+static int	exit_hook(t_m *m)
+{
+	mlx_destroy_window(m->mlx, m->win);
+	exit(42);
+}
+
+int			loop_hook(t_m *m)
 {
 	m->toggle = 0;
 	if (m->togs->up)
-		translate_xy(m, 0, -TRANSLATE);
+		translate_xy(m, 0, m->inverted ? TRANSLATE : -TRANSLATE);
 	if (m->togs->down)
-		translate_xy(m, 0, TRANSLATE);
+		translate_xy(m, 0, m->inverted ? -TRANSLATE : TRANSLATE);
 	if (m->togs->left)
-		translate_xy(m, -TRANSLATE, 0);
+		translate_xy(m, m->inverted ? TRANSLATE : -TRANSLATE, 0);
 	if (m->togs->right)
-		translate_xy(m, TRANSLATE, 0);
+		translate_xy(m, m->inverted ? -TRANSLATE : TRANSLATE, 0);
 	if (m->togs->numpad_plus)
 		scale_center(m, ZOOM_IN);
 	if (m->togs->numpad_minus)
@@ -46,7 +53,7 @@ int		loop_hook(t_m *m)
 	return (1);
 }
 
-void	set_hooks(t_m *m)
+void		set_hooks(t_m *m)
 {
 	mlx_hook(m->win, 12, 0, expose_hook, m);
 	mlx_hook(m->win, 2, 0, key_press_hook, m);
@@ -54,4 +61,5 @@ void	set_hooks(t_m *m)
 	mlx_hook(m->win, 4, 0, mouse_press_hook, m);
 	mlx_hook(m->win, 5, 0, mouse_release_hook, m);
 	mlx_hook(m->win, 6, 0, mouse_motion_hook, m);
+	mlx_hook(m->win, 17, 0, exit_hook, m);
 }

@@ -12,27 +12,27 @@
 
 #include "fractol.h"
 
-int			key_press_hook(int keycode, t_m *m)
+int				key_press_hook(int keycode, t_m *m)
 {
 	if (keycode < 280)
 		m->key_fp[keycode](m, 1);
 	return (1);
 }
 
-int			key_release_hook(int keycode, t_m *m)
+int				key_release_hook(int keycode, t_m *m)
 {
 	if (keycode < 280)
 		m->key_fp[keycode](m, 0);
 	return (1);
 }
 
-void		key_protect(t_m *prevents, int segfaults)
+static void		key_protect(t_m *prevents, int segfaults)
 {
 	(void)prevents;
 	(void)segfaults;
 }
 
-static void	init_key_fp2(t_m *m)
+static void		init_key_fp2(t_m *m)
 {
 	m->key_fp[KEY_P] = &key_fp_p;
 	m->key_fp[KEY_O] = &key_fp_o;
@@ -42,6 +42,7 @@ static void	init_key_fp2(t_m *m)
 	m->key_fp[KEY_X] = &key_fp_x;
 	m->key_fp[KEY_C] = &key_fp_c;
 	m->key_fp[KEY_V] = &key_fp_v;
+	m->key_fp[KEY_I] = &key_fp_i;
 	m->key_fp[KEY_ESC] = &key_fp_esc;
 	m->key_fp[KEY_1] = &key_fp_1;
 	m->key_fp[KEY_2] = &key_fp_2;
@@ -58,7 +59,7 @@ static void	init_key_fp2(t_m *m)
 	m->key_fp[KEY_END] = &key_fp_end;
 }
 
-void		init_key_fp(t_m *m)
+void			init_key_fp(t_m *m)
 {
 	int	i;
 

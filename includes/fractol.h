@@ -126,14 +126,15 @@ typedef struct	s_master
 	int		colour[GRADIENT];
 	int		pulse_speed:5;
 	int		pulse_speed_switch[5];
-	int		pulse_i:3;
-	int		preset_i:3;
+	t_ui	pulse_i:3;
+	t_ui	preset_i:3;
 	int		preset_bw_i:3;
 	int		col_1;
 	int		col_2;
 	int		frac:4;
 	int		toggle:1;
 	int		pulse:1;
+	int		inverted:1;
 	int		preset_x_tog:1;
 	int		preset_c_tog:1;
 	int		iter;
@@ -185,6 +186,7 @@ void			key_fp_home(t_m *m, int press);
 void			key_fp_end(t_m *m, int press);
 void			key_fp_p(t_m *m, int press);
 void			key_fp_o(t_m *m, int press);
+void			key_fp_i(t_m *m, int press);
 void			key_fp_a(t_m *m, int press);
 void			key_fp_s(t_m *m, int press);
 void			key_fp_z(t_m *m, int press);
@@ -217,7 +219,6 @@ void			mouse_press_scroll_up(t_m *m, int x, int y);
 void			mouse_press_scroll_down(t_m *m, int x, int y);
 
 int				loop_hook(t_m *m);
-int				expose_hook(t_m *m);
 void			set_hooks(t_m *m);
 
 int				f_julia(t_m *m, int x, int y);
