@@ -22,7 +22,7 @@
 
 # define THREAD_COUNT	32
 # define ITER			64
-# define ITER_INC		4
+# define ITER_INC		16
 # define ITER_CAP		2056
 
 # define WIN_WIDTH		1000
