@@ -1,5 +1,6 @@
 # 42_fractal
 Fractal generator. Wows and bedazzles. Built as part of 42 Coding University's graphics branch.
+![Julia 1](/images/image1.png?raw=true "Julia 1")
 ## Getting started
 From the root directory, run:
 ```
