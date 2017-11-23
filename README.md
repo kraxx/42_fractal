@@ -1,6 +1,6 @@
 # 42_fractal
 Fractal generator. Wows and bedazzles. Built as part of 42 Coding University's graphics branch.
-![Julia 1](/images/image1.png?raw=true "Julia 1")
+<img src="/images/image1.png" alt="Julia 1" width=700 height=700 />
 ## Getting started
 From the root directory, run:
 ```
@@ -46,7 +46,8 @@ KEYS:
 [ESC]                      Exit program
 ```
 ## Background
-![Julia 2](/images/image2.png?raw=true "Julia 2")
+<img src="/images/image2.png" alt="Julia 2" width=280 height=280 /><img src="/images/image3.png" alt="Mandelbrot" width=280 height=280 /><img src="/images/image4.png" alt="Burning Ship" width=280 height=280 />
+
 The graphics are written using minilibx, a library written on top of openGL. For every pixel on the display window, the current fractal's iteration count is calculated and assigned a colour based on the count. By default, there are 16 different colours cycled through; so, every 16 iterations represents a full cycle of colours.
 The image is stored in a char buffer, and drawn to the window whenever a change prompts it to do so. The pixel calculations are multithreaded using libpthread, allowing for multiple (default 32) calculations to be run in parallel.
 ![Mandelbrot](/images/image3.png?raw=true "Mandelbrot")
