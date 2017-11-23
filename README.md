@@ -46,5 +46,8 @@ KEYS:
 [ESC]                      Exit program
 ```
 ## Background
+![Julia 2](/images/image2.png?raw=true "Julia 2")
 The graphics are written using minilibx, a library written on top of openGL. For every pixel on the display window, the current fractal's iteration count is calculated and assigned a colour based on the count. By default, there are 16 different colours cycled through; so, every 16 iterations represents a full cycle of colours.
 The image is stored in a char buffer, and drawn to the window whenever a change prompts it to do so. The pixel calculations are multithreaded using libpthread, allowing for multiple (default 32) calculations to be run in parallel.
+![Mandelbrot](/images/image3.png?raw=true "Mandelbrot")
+![Burning Ship](/images/image4.png?raw=true "Burning Ship")
