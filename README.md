@@ -1,6 +1,6 @@
 # 42_fractal
 Fractal generator. Wows and bedazzles. Built as part of 42 Coding University's graphics branch.
-<img src="/images/image1.png" alt="Julia 1" width=700 height=700 />
+<img src="/images/image1.png" alt="Julia 1" width=800 height=800 /><img src="/images/image5.png" alt="Eye of C'thun" width=800 height=800 />
 ## Getting started
 From the root directory, run:
 ```
