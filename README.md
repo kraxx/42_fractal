@@ -50,3 +50,5 @@ KEYS:
 
 The graphics are written using minilibx, a library written on top of openGL. For every pixel on the display window, the current fractal's iteration count is calculated and assigned a colour based on the count. By default, there are 16 different colours cycled through; so, every 16 iterations represents a full cycle of colours.
 The image is stored in a char buffer, and drawn to the window whenever a change prompts it to do so. The pixel calculations are multithreaded using POSIX threads, allowing for multiple calculations to be run in parallel.
+
+<sub>*No idea why the original school project is named "fract_ol"
